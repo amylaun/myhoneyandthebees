@@ -1,0 +1,38 @@
+$body-size: 30;
+
+$colors: (
+    'white': #FFFFFF,
+    'black': #231f20,
+    'error': #6F1000,
+    'gray': #dddddb,
+    'border-color': #dddddb,
+    'font-color': #231f20,
+    'yellow': #dfa628,
+);
+
+$colors_fonts: (
+    'red': #6F1000,
+    'beige-dark': #A89C8D,
+);
+
+$colors_backgrounds: (
+    'yellow': #dfa628,
+    'grey': rgba(35,31,30,.5),
+);
+
+$max-width: 1300px;
+
+$break-page-1: 1300px;
+$break-page-2: 800px;
+$break-page-3: 500px;
+
+$wrap-1 : 1300px;
+$wrap-2 : 800px;
+$wrap-3 : 400px;
+
+$gutter: 1rem;
+$gutter-mobile: .66rem;
+
+$gutter_x3: $gutter * 3;
+$gutter_x2: $gutter * 2;
+$gutter_half: $gutter / 2;

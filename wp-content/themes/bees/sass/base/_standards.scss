@@ -1,0 +1,253 @@
+/* Standards */
+
+.all-caps,
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+.clear {
+    clear: both;
+    float: none;
+    display: block;
+}
+
+%clear-after {
+    content: '';
+    clear: both;
+    float: none;
+    display: block;
+}
+
+.align-middle {
+    vertical-align: middle;
+}
+
+.align-top {
+    vertical-align: top;
+}
+
+.align-bottom {
+    vertical-align: bottom;
+}
+
+.alignleft {
+    float: left;
+    margin: $gutter;
+    margin-left: 0;
+}
+
+.alignright {
+    float: right;
+    margin: $gutter;
+    margin-right: 0;
+}
+
+.aligncenter {
+    margin: $gutter auto;
+    text-align: center;
+}
+
+@include break-page-2 {
+    .alignright,
+    .alignleft {
+        float: none;
+        margin: $gutter auto;
+    }
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.left {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center {
+    img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.right {
+    text-align: right;
+}
+
+b,
+strong,
+.font-bold {
+    font-weight: $font-weight-medium;
+}
+
+.font-medium {
+    font-weight: $font-weight-medium;
+}
+
+.font-regular {
+    font-weight: $font-weight-regular;
+}
+
+.font-light {
+    font-weight: $font-weight-light;
+}
+
+.mobile {
+    @include min( $break-page-2 ) {
+        display: none;
+    }
+}
+
+.desktop {
+    @include max( $break-page-2 ) {
+        display: none;
+    }
+}
+
+.hide {
+    display: none !important;
+}
+
+.hide-accessible,
+.screen-reader-text {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px; width: 1px;
+    margin: -1px; padding: 0; border: 0;
+}
+
+.mobile-image-item {
+    display: none;
+    @include break-page-2 {
+        display: block;
+    }
+}
+
+.bg-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg--lazy {
+    //background-image: url('../images/loading-dots.svg')!important;
+    background-position: center!important;
+    background-repeat: no-repeat!important;
+    background-size: 40px!important;
+    transition: none!important;
+}
+
+hr {
+    border: 0;
+    border-bottom: 1px solid c('border-color')
+}
+
+.relative {
+    position: relative;
+}
+
+/***** Overlay *****/
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.overlay--link {
+    text-indent: -9999999px;
+    overflow: hidden;
+}
+
+.overlay--trigger {
+    cursor: pointer;
+}
+
+.overlay--fixed {
+    transition: .2s all ease-in-out;
+    transform: translateY(-5%);
+    opacity: 0;
+
+    background: rgba(255, 255, 255, .95);
+    display: block;
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+    > div {
+        display: flex;
+        height: 100%;
+    }
+    .content {
+        max-height: 100%;
+        margin: auto;
+        overflow-x: hidden;
+        overflow-y: auto;
+        @include no-scrollbar;
+    }
+    &:after {
+        content: 'Close';
+        @extend h5;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+.overlay--open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: inherit;
+}
+
+.is_IE {
+    .overlay-video,
+    .overlay--fixed {
+        display: none;
+    }
+    .overlay--open {
+        display: block;
+    }
+}
+
+.align-content-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shake {
+    animation: shake-rattle-roll .4s;
+}
+
+@keyframes shake-rattle-roll {
+    0%, 100% {
+        transform: translateX( 0 );
+    }
+    20%, 60% {
+        transform: translateX( 2% );
+    }
+    40%, 80% {
+        transform: translateX( 1% );
+    }
+}

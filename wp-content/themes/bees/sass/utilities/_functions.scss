@@ -1,0 +1,14 @@
+@function em($pixels, $context: $body-size) {
+    @return #{$pixels/$context}em;
+}
+
+@function rem($pixels, $context: $body-size) {
+    @return #{$pixels/$context}rem;
+}
+
+@function c($value) {
+    @if map-has-key($colors, $value) {
+          @return map-get($colors, $value);
+    }
+    @error ( 'Specified color "' + $value + '" is not defined in $color list' )
+}

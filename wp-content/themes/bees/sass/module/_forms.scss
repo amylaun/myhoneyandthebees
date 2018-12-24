@@ -1,0 +1,165 @@
+$inputMax: 100%;
+$inputPadding: 7px;
+$selectHeight: 35px;
+
+/***** Form Standards *****/
+
+::placeholder {
+    color: black;
+}
+
+/***** Basic Input Styling *****/
+
+form {
+    position: relative;
+}
+
+label {
+    /* @extend .hide-accessibly; */
+}
+
+.styled-select,
+input,
+textarea {
+    background: none;
+    border: 0;
+    font-family: $font-sans;
+    font-size: rem(16);
+    font-weight: $font-weight-medium;
+    line-height: 1em;
+    padding: $gutter_half;
+    outline: none;
+    width: 100%;
+}
+
+textarea {
+    display: block;
+}
+
+select {
+    font-family: $font-sans;
+    font-size: rem(16);
+    outline: none!important;
+}
+
+input {
+    &[type="text"] {}
+
+    &[type="submit"] {
+        @extend .cta;
+    }
+
+    &[type="radio"],
+    &[type="checkbox"] {
+        width: 20px;
+    }
+}
+/***** Form Headers *****/
+.gform_title {
+    @include h2;
+}
+
+.gform_description {
+    @include p;
+}
+
+/***** Styled Select *****/
+
+.styled-select {
+    cursor: pointer;
+    overflow: hidden;
+    height: $selectHeight;
+    background: c('white');
+    background-color: c('white');
+    border-radius: 0;
+    border: 1px solid c('border-color');
+    display: block;
+    position: relative;
+    padding: 0;
+
+    &:after,
+    &:before {
+        content: '';
+        position: absolute;
+        pointer-events: none;
+    }
+
+    &:after {
+        width: 0;
+        height: 17px;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 7px solid c('border-color');
+        top: 14px;
+        right: 10px;
+        background: c('white');
+    }
+
+    &:before {
+        background: c('white');
+        top: 0;
+        right: 0;
+        width: 33px;
+        height: 100%;
+    }
+
+    select {
+        background: transparent;
+        border: 0;
+        padding: 0 $inputPadding;
+        width: 120%;
+        height: $selectHeight;
+        -webkit-appearance: none;
+    }
+
+    select::-ms-expand {
+        /* IE appearance none */
+        display: none;
+    }
+}
+
+/***** Form Validation *****/
+
+.gfield_required {
+    color: c('error');
+    padding: 0 3px;
+}
+
+.gfield_error {
+    &.styled-select,
+    input {
+        border-color: c('error');
+    }
+}
+
+.validation_error {
+    text-align: center;
+    font-size: 14px;
+    font-weight: $font-weight-bold;
+    margin-bottom: 20px;
+}
+
+.validation_message {
+    font-size: 12px;
+}
+
+/***** Ajax Loader *****/
+
+.gform_footer {
+    padding-top: $gutter;
+    position: relative;
+
+    img.gform_ajax_spinner {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 110%;
+        width: 18px;
+        height: 18px;
+    }
+
+    p {
+        display: none;
+    }
+}

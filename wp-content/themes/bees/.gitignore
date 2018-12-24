@@ -1,0 +1,95 @@
+###############################################################################
+#                                                                             #
+#                       GITIGNORE for Clean Theme 1.0+                        #
+#                                                                             #
+###############################################################################
+
+###############################################################################
+#                                                                             #
+#           TO IGNORE UNCOMMITED CHANGES IN A TRACKED FILE:                   #
+#                                                                             #
+#           git update-index --assume-unchanged <file>                        #
+#                                                                             #
+#           Result: local modifications to file will be ignored.              #
+#           File won't appear when running `git status`, nor                  #
+#           will the changes be committed. To reverse:                        #
+#                                                                             #
+#           git update-index --no-assume-unchanged <file>                     #
+#                                                                             #
+#           TO STOP TRACKING A FILE THAT IS TRACKED:                          #
+#                                                                             #
+#           git rm --cached <file>                                            #
+#                                                                             #
+#           Result: file is no longer tracked by the index.                   #
+#           The working tree version of the file remains unchanged.           #
+#                                                                             #
+###############################################################################
+
+#===================================#
+#             OS files              #
+#===================================#
+
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+*[Tt]humbs.db
+*.Trashes
+
+#===================================#
+#             Log files             #
+#===================================#
+
+*.log
+*.sql
+*.sqlite
+error_log
+access_log
+.sass-cache
+
+#===================================#
+#            Misc files             #
+#===================================#
+
+# ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ignore files starting with .
+.*
+
+# ignore files starting with ~
+~*
+
+# ignore editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+*.swp
+
+# ignore media files
+*.psd
+*.markdown
+*.mov
+
+#===================================#
+#         Track this file           #
+#===================================#
+
+!.gitignore

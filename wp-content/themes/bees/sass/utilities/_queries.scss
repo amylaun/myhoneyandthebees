@@ -1,0 +1,34 @@
+@mixin min($content) {
+    @media (min-width: $content) {
+        @content;
+    }
+}
+@mixin max($content) {
+    @media (max-width: $content) {
+        @content;
+    }
+}
+@mixin between($min, $max) {
+    @media (max-width: $max) and (min-width: $min) {
+        @content;
+    }
+}
+
+
+@mixin break-page-1 {
+  @media (max-width: $break-page-1) {
+    @content;
+  }
+}
+
+@mixin break-page-2 {
+  @media (max-width: $break-page-2) {
+    @content;
+  }
+}
+
+@mixin break-page-3 {
+  @media (max-width: $break-page-3) {
+    @content;
+  }
+}

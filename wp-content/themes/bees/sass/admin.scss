@@ -1,0 +1,131 @@
+@import 'base/variables';
+@import 'base/fonts';
+@import 'utilities/mixins';
+@import 'utilities/functions';
+
+/***** Login *****/
+
+#wp-auth-check-wrap #wp-auth-check {
+    padding-top: 20px!important;
+}
+
+body.login.interim-login {
+    background: none;
+    #login h1 {
+        display: none;
+    }
+    form {
+        padding: 10px 0;
+        label {
+            color: #000;
+            font-weight: 400;
+            letter-spacing: .05em;
+            text-align: left;
+            text-transform: none;
+        }
+    }
+}
+
+body.login {
+    font-family: $font-sans;
+    form {
+        background: transparent;
+        box-shadow: none;
+        padding: 20px 20px 10px;
+        label {
+            color: #000;
+            //text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: .05em;
+            font-weight: 400;
+            text-align: center;
+            display: block;
+        }
+        input[type=text],
+        input[type=password],
+        input[type=checkbox] {
+            border: 1px solid c('border-color');
+            box-shadow: none;
+            margin: 0;
+            font-size: 14px;
+            padding: 15px;
+            outline: none!important;
+            margin: 8px auto 20px;
+            &:focus {
+                box-shadow: none;
+                border-color: c('border-color');
+            }
+        }
+        input[type=checkbox] {
+            margin: 10px 7px 14px 0;
+        }
+        .forgetmenot,
+        .submit {
+            display: block;
+            width: 100%;
+            float: none;
+        }
+        .forgetmenot {
+            label {
+                letter-spacing: .05em;
+                text-transform: none;
+                text-align: left;
+                margin: 0;
+            }
+        }
+        .submit {
+            input[type=submit] {
+                background: c('black');
+                border: 0;
+                border-radius: 0;
+                box-shadow: none;
+                display: block;
+                text-shadow: none;
+
+                text-transform: uppercase;
+                font-size: 12px;
+                letter-spacing: .15em;
+
+                height: auto;
+                margin: 20px 0 0;
+                padding: 12px;
+                width: 100%;
+                &:hover {
+                    background: c('black');
+                }
+            }
+        }
+    }
+    #login_error,
+    .message {
+        margin: 40px 20px 0;
+        &:empty {
+            display: none;
+        }
+    }
+    #nav,
+    #backtoblog {
+        font-size: 13px;
+        margin: 10px auto 0 !important;
+        text-align: center;
+        a {
+            color: c('black');
+            &:hover {
+                color: c('black');
+                opacity: .8;
+            }
+        }
+    }
+}
+
+#login h1 a {
+    background-image: url('../images/logo.svg');
+    max-width: 150px;
+    width: 150px;
+    height: 50px;
+    margin-bottom: 0;
+    background-size: contain;
+    background-position: center bottom;
+    pointer-events: none;
+    /* Does not make sense for site logo to link to wordpress */
+}

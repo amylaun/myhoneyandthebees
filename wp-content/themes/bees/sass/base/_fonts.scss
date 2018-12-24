@@ -1,0 +1,148 @@
+/***** VARIABLES *****/
+
+$font-sans: 'Montserrat', sans-serif;
+$font-script: sans-serif;
+$font-serif: adobe-garamond-pro, serif;
+
+$font-color: c('font-color');
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$font-size-base: rem( 14 );
+$font-size-small: rem( 11 );
+
+/***** TYPOGRAPHY *****/
+
+body {
+    font-size: 100%;
+}
+
+body,
+html {
+    color: c('font-color');
+    font-family: $font-sans;
+    font-size: $body-size * 1px;
+    letter-spacing: .015rem;
+    line-height: 1;
+    * {
+       -webkit-font-smoothing: antialiased !important;
+    }
+}
+
+header,
+main,
+footer {
+    font-size: $font-size-base;
+}
+
+h1, h2, h3, h4, h5, h5, h6, p {
+    font-weight: unset;
+    margin: 0;
+    padding: 0;
+}
+
+/***** FONTS *****/
+
+@mixin h1 {
+    font-size: rem(50);
+    line-height: 1.2em;
+    padding-bottom: rem(20);
+}
+@mixin h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: $font-serif;
+    color: rgba(35,31,30,.7);
+    letter-spacing: .1rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+@mixin h3 {
+    font-size: rem(30);
+    line-height: 1.2em;
+    padding-bottom: rem(10);
+}
+@mixin h4 {
+    font-size: rem(18);
+    line-height: 1.2em;
+    padding-bottom: rem(5);
+}
+@mixin p {
+    font-size: 15px;
+    line-height: 1.65em;
+    padding-bottom: 10px;
+}
+
+.h1,
+h1 {
+    @include h1;
+}
+
+.h2,
+h2 {
+    @include h2;
+}
+
+.h2-title {
+    &:before {
+        content: url('../images/bee-yellow.svg');
+        display: inline-block;
+        width: 14px;
+        margin: 0 15px 0 0;
+        position: relative;
+        top: 2px;
+    }
+    &:after {
+        content: '';
+        display: block;
+        width: 70px;
+        height: 1px;
+        border-bottom: 2px dashed c('gray');
+        margin-top: 30px;
+    }
+}
+
+.h3,
+h3 {
+    @include h3;
+}
+
+.h4,
+h4,
+h5,
+h6 {
+    @include h4;
+}
+
+p {
+    @include p;
+}
+
+a {
+    text-decoration: none;
+}
+
+.underline,
+.underline a {
+    text-decoration: underline;
+}
+
+.small {
+    font-size: 13px;
+}
+
+/***** Colors *****/
+
+@each $c, $color in $colors_fonts {
+    .#{$c}{
+          color: $color; }
+}
+
+@each $c, $color in $colors_backgrounds {
+    .bg-#{$c}{
+          background-color: $color; }
+}

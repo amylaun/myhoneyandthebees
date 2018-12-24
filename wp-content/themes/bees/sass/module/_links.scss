@@ -1,0 +1,18 @@
+/* Links */
+.cta {
+    border: 0;
+    background-color: #ec008c;
+    color: c('white');
+    cursor: pointer;
+    display: inline-block;
+    font-size: rem(16);
+    font-weight: $font-weight-normal;
+    font-family: $font-sans;
+    line-height: 1em;
+    padding: 10px 14px;
+    margin: 0 20px 0 0;
+}
+
+.kiosk:hover {
+    color: #ec008c;
+}

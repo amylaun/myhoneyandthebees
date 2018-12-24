@@ -1,0 +1,66 @@
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .gallery,
+    .posts,
+    .about {
+        padding-left: $gutter;
+        padding-right: $gutter;
+    }
+    .gallery {
+        width: 100%;
+        background: c('yellow');
+        padding-bottom: 37%;
+        height: 0;
+    }
+    .posts {
+        width: 60%;
+        max-width: 700px;
+        padding-right: 0;
+    }
+    .about {
+        width: 40%;
+        max-width: 300px;
+        padding-left: 0;
+    }
+
+    @include max( 1000px ) {
+        .posts,
+        .about {
+            width: 100%;
+            max-width: 100%;
+            .h2-title {
+                text-align: center;
+                position: relative;
+                &:before {
+                    background: white;
+                    margin: auto;
+                    position: absolute;
+                    bottom: -35px;
+                    left: 0;
+                    right: 0;
+                    width: 40px;
+                    height: 40px;
+                    padding: 13px;
+                }
+                &:after {
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
+
+.posts {
+    .post {
+        .featured-image {
+            margin-bottom: $gutter;
+        }
+        .post-url {
+            font-size: 12px;
+        }
+    }
+}
